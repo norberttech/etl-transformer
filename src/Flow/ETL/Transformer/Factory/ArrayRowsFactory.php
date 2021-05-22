@@ -19,19 +19,21 @@ final class ArrayRowsFactory implements RowsFactory
 
     /**
      * @param array<array> $data
+     *
      * @throws InvalidArgumentException
      */
     public function __construct(array $data)
     {
         foreach ($data as $row) {
+            /** @psalm-suppress DocblockTypeContradiction */
             if (!\is_array($row)) {
-                throw new InvalidArgumentException("ArrayRowsFactory expects data to be an array of arrays");
+                throw new InvalidArgumentException('ArrayRowsFactory expects data to be an array of arrays');
             }
         }
         $this->data = $data;
     }
 
-    public function create(): Rows
+    public function create() : Rows
     {
         return (new ArrayUnpackTransformer('element'))->transform(new Rows(...\array_map(
             function (array $row) : Row {
