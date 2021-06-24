@@ -8,14 +8,25 @@ use Flow\ETL\Row;
 use Flow\ETL\Rows;
 use Flow\ETL\Transformer;
 
+/**
+ * @psalm-immutable
+ */
 final class StringContactTransformer implements Transformer
 {
+    /**
+     * @var array<string>
+     */
     private array $stringEntryNames;
 
     private string $glue;
 
     private string $newEntryName;
 
+    /**
+     * @param array<string> $stringEntryNames
+     * @param string $glue
+     * @param string $newEntryName
+     */
     public function __construct(array $stringEntryNames, string $glue = ' ', string $newEntryName = 'element')
     {
         $this->stringEntryNames = $stringEntryNames;
@@ -29,12 +40,12 @@ final class StringContactTransformer implements Transformer
          * @psalm-var pure-callable(Row $row) : Row $transformer
          */
         $transformer = function (Row $row) : Row {
-            /** @var array<string> $values */
             $entries = $row->filter(fn (Row\Entry $entry) : bool => \in_array($entry->name(), $this->stringEntryNames, true) && $entry instanceof Row\Entry\StringEntry)->entries();
+            /** @var array<string> $values */
             $values = [];
 
             foreach ($entries->all() as $entry) {
-                $values[] = $entry->value();
+                $values[] = (string) $entry->value();
             }
 
             return $row->add(
