@@ -113,9 +113,9 @@ final class ArrayAccessorTest extends TestCase
             ],
             ArrayAccessor::value(
                 ['transactions' => [
-                        ['id' => 1, 'packages' => [['label_id' => '12345'], ['label_id' => '22222']]],
-                        ['id' => 1, 'packages' => [['label_id' => '3333']]],
-                    ],
+                    ['id' => 1, 'packages' => [['label_id' => '12345'], ['label_id' => '22222']]],
+                    ['id' => 1, 'packages' => [['label_id' => '3333']]],
+                ],
                 ],
                 'transactions.*.packages.*.label_id'
             ),
