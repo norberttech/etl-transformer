@@ -27,7 +27,7 @@ final class FilterRowsTransformerTest extends TestCase
                 'email',
                 new ValidValue\SymfonyValidator([
                     new NotBlank(),
-                    new Email()
+                    new Email(),
                 ])
             )
         );
@@ -35,8 +35,8 @@ final class FilterRowsTransformerTest extends TestCase
         $this->assertSame(
             [
                 [
-                    'email' => 'email@email.com'
-                ]
+                    'email' => 'email@email.com',
+                ],
             ],
             $transformer->transform($rows)->toArray()
         );

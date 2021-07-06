@@ -8,6 +8,9 @@ use Flow\ETL\Row;
 use Flow\ETL\Transformer\Filter\Filter;
 use Flow\ETL\Transformer\Filter\Filter\ValidValue\Validator;
 
+/**
+ * @psalm-immutable
+ */
 final class ValidValue implements Filter
 {
     private string $entryName;
@@ -20,7 +23,7 @@ final class ValidValue implements Filter
         $this->validator = $validator;
     }
 
-    public function keep(Row $row): bool
+    public function keep(Row $row) : bool
     {
         return $this->validator->isValid($row->valueOf($this->entryName));
     }

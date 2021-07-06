@@ -31,7 +31,7 @@ final class ConditionalTransformerTest extends TestCase
                     'email',
                     new ValidValue\SymfonyValidator([
                         new NotBlank(),
-                        new Email()
+                        new Email(),
                     ])
                 ),
                 new StaticEntryTransformer(new Row\Entry\BooleanEntry('valid', true))
@@ -42,7 +42,7 @@ final class ConditionalTransformerTest extends TestCase
                         'email',
                         new ValidValue\SymfonyValidator([
                             new NotBlank(),
-                            new Email()
+                            new Email(),
                         ])
                     )
                 ),
@@ -54,16 +54,16 @@ final class ConditionalTransformerTest extends TestCase
             [
                 [
                     'email' => '',
-                    'valid' => false
+                    'valid' => false,
                 ],
                 [
                     'email' => 'not_email',
-                    'valid' => false
+                    'valid' => false,
                 ],
                 [
                     'email' => 'email@email.com',
-                    'valid' => true
-                ]
+                    'valid' => true,
+                ],
             ],
             $transformer->transform($rows)->toArray()
         );

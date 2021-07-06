@@ -22,13 +22,17 @@ final class SymfonyValidator implements Validator
 
     private ValidatorInterface $validator;
 
+    /**
+     * @param array<Constraint> $constraints
+     * @param null|ValidatorInterface $validator
+     */
     public function __construct(array $constraints = [], ValidatorInterface $validator = null)
     {
         $this->constraints = $constraints;
         $this->validator = $validator ? $validator : Validation::createValidator();
     }
 
-    public function isValid($value): bool
+    public function isValid($value) : bool
     {
         return $this->validator->validate($value, $this->constraints)->count() === 0;
     }
