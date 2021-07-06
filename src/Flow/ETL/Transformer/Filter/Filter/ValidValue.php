@@ -25,6 +25,7 @@ final class ValidValue implements Filter
 
     public function keep(Row $row) : bool
     {
+        /** @psalm-suppress ImpureMethodCall */
         return $this->validator->isValid($row->valueOf($this->entryName));
     }
 }
