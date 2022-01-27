@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-01-12
+## [Unreleased] - 2022-01-27
 
 ### Added
 - [#117](https://github.com/flow-php/etl-transformer/pull/117) - **Workflow to auto-merge dependabot PRs** - [@tomaszhanc](https://github.com/tomaszhanc)
@@ -65,6 +65,7 @@
 - [e858d0](https://github.com/flow-php/etl-transformer/commit/e858d0a9826dab8ff71a0fc4b14e5a92d72d44a8) - **RemoveEntriesTransformer** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [#164](https://github.com/flow-php/etl-transformer/pull/164) - **Reduce recreating from scratch entries in transformers** - [@norberttech](https://github.com/norberttech)
 - [#156](https://github.com/flow-php/etl-transformer/pull/156) - **Reuse workflows from aeon-php/actions** - [@tomaszhanc](https://github.com/tomaszhanc)
 - [#149](https://github.com/flow-php/etl-transformer/pull/149) - **Merge QA workflows into one** - [@tomaszhanc](https://github.com/tomaszhanc)
 - [#83](https://github.com/flow-php/etl-transformer/pull/83) - **ConditionalTransformer returns Rows' flatMap now** - [@wojtekzymonik](https://github.com/wojtekzymonik)
