@@ -50,9 +50,7 @@ final class StringEntryValueCaseConverterTransformer implements Transformer
                 /** @var Row\Entry\StringEntry $entry */
                 $entry = $row->get($entryName);
 
-                $row = $row->remove(
-                    $entry->name()
-                )->add(
+                $row = $row->set(
                     /** @psalm-suppress MixedArgument */
                     new Row\Entry\StringEntry($entry->name(), ($this->case === self::CASE_UPPER) ? \mb_strtoupper($entry->value()) : \mb_strtolower($entry->value()))
                 );

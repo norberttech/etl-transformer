@@ -25,12 +25,13 @@ final class RemoveEntriesTransformer implements Transformer
 
     public function transform(Rows $rows) : Rows
     {
-        foreach ($this->names as $name) {
-            $rows = $rows->map(function (Row $row) use ($name) : Row {
-                return $row->remove($name);
-            });
-        }
+        /**
+         * @psalm-var pure-callable(Row $row) : Row $transformer
+         */
+        $transformer = function (Row $row) : Row {
+            return $row->remove(...$this->names);
+        };
 
-        return $rows;
+        return $rows->map($transformer);
     }
 }

@@ -53,6 +53,7 @@ final class ArrayUnpackTransformer implements Transformer
                 throw new RuntimeException("\"{$this->arrayEntryName}\" is not ArrayEntry");
             }
 
+            $entries = [];
             /**
              * @var int|string $key
              * @var mixed $value
@@ -68,7 +69,11 @@ final class ArrayUnpackTransformer implements Transformer
                     $entryName = $this->entryPrefix . $entryName;
                 }
 
-                $row = $row->add($this->entryFactory->createEntry($entryName, $value));
+                $entries[] = $this->entryFactory->createEntry($entryName, $value);
+            }
+
+            if (\count($entries)) {
+                return new Row($row->entries()->merge(new Row\Entries(...$entries)));
             }
 
             return $row;

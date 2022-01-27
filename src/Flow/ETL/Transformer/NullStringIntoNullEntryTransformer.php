@@ -37,9 +37,7 @@ final class NullStringIntoNullEntryTransformer implements Transformer
                 }
 
                 if (\mb_strtolower($entry->value()) === 'null') {
-                    $row = $row
-                        ->remove($entry->name())
-                        ->add(new Row\Entry\NullEntry($entry->name()));
+                    $row = $row->set(new Row\Entry\NullEntry($entry->name()));
                 }
             }
 
