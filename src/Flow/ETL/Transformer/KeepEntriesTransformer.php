@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Flow\ETL\Transformer;
 
 use Flow\ETL\Row;
+use Flow\ETL\Row\Entry;
 use Flow\ETL\Rows;
 use Flow\ETL\Transformer;
 
@@ -27,15 +28,10 @@ final class KeepEntriesTransformer implements Transformer
     {
         /** @psalm-suppress InvalidArgument */
         return $rows->map(function (Row $row) : Row {
-            $entries = [];
+            $allEntries = $row->entries()->map(fn (Entry $entry) : string => $entry->name());
+            $removeEntries = \array_diff($allEntries, $this->names);
 
-            foreach ($row->entries()->all() as $entry) {
-                if (\in_array($entry->name(), $this->names, true)) {
-                    $entries[] = $entry;
-                }
-            }
-
-            return new Row(new Row\Entries(...$entries));
+            return $row->remove(...$removeEntries);
         });
     }
 }

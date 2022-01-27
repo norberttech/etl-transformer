@@ -38,12 +38,11 @@ final class ArrayReverseTransformer implements Transformer
             $arrayEntry = $row->get($this->arrayEntryName);
 
             /** @psalm-suppress MixedArgument */
-            return $row->remove($arrayEntry->name())
-                ->add(new Row\Entry\ArrayEntry(
-                    $arrayEntry->name(),
-                    /** @phpstan-ignore-next-line */
-                    \array_reverse($arrayEntry->value())
-                ));
+            return $row->set(new Row\Entry\ArrayEntry(
+                $arrayEntry->name(),
+                /** @phpstan-ignore-next-line */
+                \array_reverse($arrayEntry->value())
+            ));
         };
 
         return $rows->map($transformer);

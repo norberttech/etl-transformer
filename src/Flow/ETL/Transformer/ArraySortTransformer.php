@@ -44,11 +44,10 @@ final class ArraySortTransformer implements Transformer
             $array = $arrayEntry->value();
             \sort($array, $this->sortingFlag);
 
-            return $row->remove($arrayEntry->name())
-                ->add(new Row\Entry\ArrayEntry(
-                    $arrayEntry->name(),
-                    $array
-                ));
+            return $row->set(new Row\Entry\ArrayEntry(
+                $arrayEntry->name(),
+                $array
+            ));
         };
 
         return $rows->map($transformer);

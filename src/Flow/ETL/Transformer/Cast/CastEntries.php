@@ -42,11 +42,7 @@ class CastEntries implements CastRow
                     continue;
                 }
 
-                $row = new Row($row->entries()
-                    ->remove($entry->name())
-                    ->add(
-                        $this->caster->cast($entry)
-                    ));
+                $row = new Row($row->entries()->set($this->caster->cast($entry)));
             }
         }
 

@@ -32,9 +32,7 @@ final class StringFormatTransformer implements Transformer
             $entry = $row->get($this->entryName);
 
             /** @psalm-suppress MixedArgument */
-            return $row->remove(
-                $entry->name()
-            )->add(
+            return $row->set(
                 /** @phpstan-ignore-next-line */
                 new Row\Entry\StringEntry($entry->name(), \sprintf($this->format, $entry->value()))
             );
