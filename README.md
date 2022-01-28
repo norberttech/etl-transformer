@@ -6,6 +6,66 @@
 
 Set of ETL generic Transformers
 
+* **Generic**
+    * [cast](src/Flow/ETL/Transformer/CastTransformer.php)
+    * [chain](src/Flow/ETL/Transformer/ChainTransformer.php)
+    * [clone entry](src/Flow/ETL/Transformer/CloneEntryTransformer.php)
+    * [conditional](src/Flow/ETL/Transformer/ConditionalTransformer.php)
+    * [dynamic entry](src/Flow/ETL/Transformer/DynamicEntryTransformer.php)
+    * [entry name style converter](src/Flow/ETL/Transformer/EntryNameStyleConverterTransformer.php)
+    * [filter rows](src/Flow/ETL/Transformer/FilterRowsTransformer.php)
+    * [group to array](src/Flow/ETL/Transformer/GroupToArrayTransformer.php)
+    * [keep entries](src/Flow/ETL/Transformer/KeepEntriesTransformer.php)
+    * [math operation](src/Flow/ETL/Transformer/MathOperationTransformer.php)
+    * [remove entries](src/Flow/ETL/Transformer/RemoveEntriesTransformer.php)
+    * [rename entries](src/Flow/ETL/Transformer/RenameEntriesTransformer.php)
+    * [static entry](src/Flow/ETL/Transformer/StaticEntryTransformer.php)
+* **Array**
+    * [array get](src/Flow/ETL/Transformer/ArrayDotGetTransformer.php)
+    * [array rename](src/Flow/ETL/Transformer/ArrayDotRenameTransformer.php)
+    * [array expand](src/Flow/ETL/Transformer/ArrayExpandTransformer.php)
+    * [array keys style converter](src/Flow/ETL/Transformer/ArrayKeysStyleConverterTransformer.php)
+    * [array merge](src/Flow/ETL/Transformer/ArrayMergeTransformer.php)
+    * [array reverse](src/Flow/ETL/Transformer/ArrayReverseTransformer.php)
+    * [array sort](src/Flow/ETL/Transformer/ArraySortTransformer.php)
+    * [array unpack](src/Flow/ETL/Transformer/ArrayUnpackTransformer.php)
+* **Object**
+    * [object method](src/Flow/ETL/Transformer/ObjectMethodTransformer.php)
+    * [object to array](src/Flow/ETL/Transformer/ObjectToArrayTransformer.php)
+* **String**
+    * [null string into null entry](src/Flow/ETL/Transformer/NullStringIntoNullEntryTransformer.php)
+    * [string concat](src/Flow/ETL/Transformer/StringConcatTransformer.php)
+    * [string entry value case converter](src/Flow/ETL/Transformer/StringEntryValueCaseConverterTransformer.php)
+    * [string format](src/Flow/ETL/Transformer/StringFormatTransformer.php)
+* **Callback** - *Might come with performance degradation*
+    * [callback entry](src/Flow/ETL/Transformer/CallbackEntryTransformer.php)
+    * [callback row](src/Flow/ETL/Transformer/CallbackRowTransformer.php)    
+
+
+## Custom Transformer
+
+> If possible it's recommended to avoid writing custom transformers. Official transformers are optimized 
+> again internal mechanisms which you might not be able to achieve in your custom code. 
+
+
+Custom should only implement `Transformer` interface: 
+
+Example: 
+```php
+<?php
+
+use Flow\ETL\Transformer;
+use Flow\ETL\Rows;
+
+class NotNorbertTransformer implements Transformer
+{
+    public function transform(Rows $rows) : Rows
+    {
+        return $rows->filter(fn(Row $row) => $row->get('name')->value() !== "Norbert");
+    }
+}
+```
+
 ## Transformer - FilterRows
 
 Filter out rows
