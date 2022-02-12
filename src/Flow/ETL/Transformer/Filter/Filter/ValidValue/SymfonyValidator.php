@@ -32,6 +32,28 @@ final class SymfonyValidator implements Validator
         $this->validator = $validator ? $validator : Validation::createValidator();
     }
 
+    /**
+     * @return array{validator: ValidatorInterface, constraints: array<Constraint>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'constraints' => $this->constraints,
+            'validator' => $this->validator,
+        ];
+    }
+
+    /**
+     * @param array{validator: ValidatorInterface, constraints: array<Constraint>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->validator = $data['validator'];
+        $this->constraints = $data['constraints'];
+    }
+
     public function isValid($value) : bool
     {
         return $this->validator->validate($value, $this->constraints)->count() === 0;

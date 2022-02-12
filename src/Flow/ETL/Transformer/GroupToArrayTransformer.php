@@ -24,6 +24,28 @@ final class GroupToArrayTransformer implements Transformer
         $this->newEntryName = $newEntryName;
     }
 
+    /**
+     * @return array{group_by_entry: string, new_entry_name: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'group_by_entry' => $this->groupByEntry,
+            'new_entry_name' => $this->newEntryName,
+        ];
+    }
+
+    /**
+     * @param array{group_by_entry: string, new_entry_name: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->groupByEntry = $data['group_by_entry'];
+        $this->newEntryName = $data['new_entry_name'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /** @var array<array-key, array<mixed>> $entries */

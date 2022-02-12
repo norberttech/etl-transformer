@@ -21,6 +21,26 @@ final class DateTimeToStringEntryCaster implements EntryCaster
         $this->valueCaster = new ValueCaster\DateTimeToStringCaster($format);
     }
 
+    /**
+     * @return array{value_caster: ValueCaster\DateTimeToStringCaster}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'value_caster' => $this->valueCaster,
+        ];
+    }
+
+    /**
+     * @param array{value_caster: ValueCaster\DateTimeToStringCaster} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->valueCaster = $data['value_caster'];
+    }
+
     public function cast(Entry $entry) : Entry
     {
         return new StringEntry(

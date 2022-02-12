@@ -24,6 +24,26 @@ final class KeepEntriesTransformer implements Transformer
         $this->names = $names;
     }
 
+    /**
+     * @return array{names: array<string>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'names' => $this->names,
+        ];
+    }
+
+    /**
+     * @param array{names: array<string>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->names = $data['names'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /** @psalm-suppress InvalidArgument */

@@ -26,6 +26,28 @@ final class ObjectToArrayTransformer implements Transformer
     }
 
     /**
+     * @return array{object_entry_name: string, hydrator: HydratorInterface}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'object_entry_name' => $this->objectEntryName,
+            'hydrator' => $this->hydrator,
+        ];
+    }
+
+    /**
+     * @param array{object_entry_name: string, hydrator: HydratorInterface} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->objectEntryName = $data['object_entry_name'];
+        $this->hydrator = $data['hydrator'];
+    }
+
+    /**
      * @psalm-suppress InvalidArgument
      * @psalm-suppress MixedArgument
      */

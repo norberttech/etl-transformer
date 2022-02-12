@@ -22,6 +22,26 @@ final class ChainTransformer implements Transformer
         $this->transformers = $transformers;
     }
 
+    /**
+     * @return array{transformers: array<Transformer>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'transformers' => $this->transformers,
+        ];
+    }
+
+    /**
+     * @param array{transformers: array<Transformer>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->transformers = $data['transformers'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         foreach ($this->transformers as $transformer) {

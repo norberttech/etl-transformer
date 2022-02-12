@@ -46,6 +46,34 @@ final class ObjectMethodTransformer implements Transformer
         $this->entryFactory = null === $entryFactory ? new NativeEntryFactory() : $entryFactory;
     }
 
+    /**
+     * @return array{object_entry_name: string, method: string, new_entry_name: string, parameters: array<mixed>, entry_factory: EntryFactory}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'object_entry_name' => $this->objectEntryName,
+            'method' => $this->method,
+            'new_entry_name' => $this->newEntryName,
+            'parameters' => $this->parameters,
+            'entry_factory' => $this->entryFactory,
+        ];
+    }
+
+    /**
+     * @param array{object_entry_name: string, method: string, new_entry_name: string, parameters: array<mixed>, entry_factory: EntryFactory} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->objectEntryName = $data['object_entry_name'];
+        $this->method = $data['method'];
+        $this->newEntryName = $data['new_entry_name'];
+        $this->parameters = $data['parameters'];
+        $this->entryFactory = $data['entry_factory'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

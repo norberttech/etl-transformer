@@ -21,6 +21,26 @@ final class ArrayReverseTransformer implements Transformer
         $this->arrayEntryName = $arrayEntry;
     }
 
+    /**
+     * @return array{array_entry_name: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'array_entry_name' => $this->arrayEntryName,
+        ];
+    }
+
+    /**
+     * @param array{array_entry_name: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->arrayEntryName = $data['array_entry_name'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

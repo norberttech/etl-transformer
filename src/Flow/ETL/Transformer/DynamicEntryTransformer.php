@@ -26,6 +26,26 @@ final class DynamicEntryTransformer implements Transformer
         $this->generator = $generator;
     }
 
+    /**
+     * @return array{generator: callable(Row) : Row\Entries}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'generator' => $this->generator,
+        ];
+    }
+
+    /**
+     * @param array{generator: callable(Row) : Row\Entries} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->generator = $data['generator'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

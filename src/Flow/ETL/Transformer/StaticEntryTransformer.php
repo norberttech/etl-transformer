@@ -24,6 +24,26 @@ final class StaticEntryTransformer implements Transformer
         $this->entry = $entry;
     }
 
+    /**
+     * @return array{entry: Entry}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'entry' => $this->entry,
+        ];
+    }
+
+    /**
+     * @param array{entry: Entry} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->entry = $data['entry'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

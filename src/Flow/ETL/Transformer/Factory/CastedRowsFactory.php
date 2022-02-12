@@ -24,6 +24,28 @@ final class CastedRowsFactory implements RowsFactory
         $this->castEntries = $castEntries;
     }
 
+    /**
+     * @return array{factory: RowsFactory, cast_entries: array<CastRow>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'factory' => $this->factory,
+            'cast_entries' => $this->castEntries,
+        ];
+    }
+
+    /**
+     * @psalm-suppress MoreSpecificImplementedParamType
+     *
+     * @param array{factory: RowsFactory, cast_entries: array<CastRow>} $data
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->factory = $data['factory'];
+        $this->castEntries = $data['cast_entries'];
+    }
+
     /** @phpstan-ignore-next-line */
     public function create(array $data) : Rows
     {

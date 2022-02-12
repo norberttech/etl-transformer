@@ -15,16 +15,36 @@ final class All implements Filter
     /**
      * @var Filter[]
      */
-    private array $filter;
+    private array $filters;
 
     public function __construct(Filter ...$filter)
     {
-        $this->filter = $filter;
+        $this->filters = $filter;
+    }
+
+    /**
+     * @return array{filters: array<Filter>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'filters' => $this->filters,
+        ];
+    }
+
+    /**
+     * @param array{filters: array<Filter>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->filters = $data['filters'];
     }
 
     public function keep(Row $row) : bool
     {
-        foreach ($this->filter as $filter) {
+        foreach ($this->filters as $filter) {
             if (!$filter->keep($row)) {
                 return false;
             }

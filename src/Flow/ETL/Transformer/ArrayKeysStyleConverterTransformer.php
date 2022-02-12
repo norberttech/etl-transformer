@@ -44,6 +44,30 @@ final class ArrayKeysStyleConverterTransformer implements Transformer
         $this->entryFactory = $entryFactory ?? new NativeEntryFactory();
     }
 
+    /**
+     * @return array{array_entry_name: string, style: string, entry_factory: EntryFactory}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'array_entry_name' => $this->arrayEntryName,
+            'style' => $this->style,
+            'entry_factory' => $this->entryFactory,
+        ];
+    }
+
+    /**
+     * @param array{array_entry_name: string, style: string, entry_factory: EntryFactory} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->arrayEntryName = $data['array_entry_name'];
+        $this->style = $data['style'];
+        $this->entryFactory = $data['entry_factory'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

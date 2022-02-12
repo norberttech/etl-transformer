@@ -30,6 +30,29 @@ final class CallbackEntryTransformer implements Transformer
         $this->callables = $callables;
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     *
+     * @return array{callables: array<pure-callable(Entry) : Entry>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'callables' => $this->callables,
+        ];
+    }
+
+    /**
+     * @phpstan-ignore-next-line
+     *
+     * @param array{callables: array<pure-callable(Entry) : Entry>} $data
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->callables = $data['callables'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

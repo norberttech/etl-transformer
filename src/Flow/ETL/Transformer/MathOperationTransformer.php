@@ -60,6 +60,32 @@ final class MathOperationTransformer implements Transformer
         return new self($leftEntry, $rightEntry, 'power', $newEntryName);
     }
 
+    /**
+     * @return array{left_entry: string, right_entry: string, operation: string, new_entry_name: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'left_entry' => $this->leftEntry,
+            'right_entry' => $this->rightEntry,
+            'operation' => $this->operation,
+            'new_entry_name' => $this->newEntryName,
+        ];
+    }
+
+    /**
+     * @param array{left_entry: string, right_entry: string, operation: string, new_entry_name: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->leftEntry = $data['left_entry'];
+        $this->rightEntry = $data['right_entry'];
+        $this->operation = $data['operation'];
+        $this->newEntryName = $data['new_entry_name'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

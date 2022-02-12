@@ -29,6 +29,30 @@ final class ArrayExpandTransformer implements Transformer
         $this->entryFactory = $entryFactory ? $entryFactory : new NativeEntryFactory();
     }
 
+    /**
+     * @return array{array_entry_name: string, expand_entry_name: string, entry_factory: EntryFactory}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'array_entry_name' => $this->arrayEntryName,
+            'expand_entry_name' => $this->expandEntryName,
+            'entry_factory' => $this->entryFactory,
+        ];
+    }
+
+    /**
+     * @param array{array_entry_name: string, expand_entry_name: string, entry_factory: EntryFactory} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->arrayEntryName = $data['array_entry_name'];
+        $this->expandEntryName = $data['expand_entry_name'];
+        $this->entryFactory = $data['entry_factory'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

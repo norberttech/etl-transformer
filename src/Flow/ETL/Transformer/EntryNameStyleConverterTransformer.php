@@ -34,6 +34,26 @@ final class EntryNameStyleConverterTransformer implements Transformer
         $this->style = $style;
     }
 
+    /**
+     * @return array{style: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'style' => $this->style,
+        ];
+    }
+
+    /**
+     * @param array{style: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->style = $data['style'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /** @psalm-var pure-callable(Row $row) : Row $rowTransformer */

@@ -29,6 +29,29 @@ final class CallbackRowTransformer implements Transformer
         $this->callable = $callable;
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     *
+     * @return array{callable: pure-callable(Row) : Row}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'callable' => $this->callable,
+        ];
+    }
+
+    /**
+     * @phpstan-ignore-next-line
+     *
+     * @param array{callable: pure-callable(Row) : Row} $data
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->callable = $data['callable'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         return $rows->map($this->callable);

@@ -24,6 +24,28 @@ final class ArraySortTransformer implements Transformer
         $this->sortingFlag = $sortingFlag;
     }
 
+    /**
+     * @return array{array_entry_name: string, sorting_flag: int}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'array_entry_name' => $this->arrayEntryName,
+            'sorting_flag' => $this->sortingFlag,
+        ];
+    }
+
+    /**
+     * @param array{array_entry_name: string, sorting_flag: int} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->arrayEntryName = $data['array_entry_name'];
+        $this->sortingFlag = $data['sorting_flag'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

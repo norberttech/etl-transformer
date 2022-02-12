@@ -11,6 +11,15 @@ use Flow\ETL\Transformer\Cast\ValueCaster;
  */
 final class AnyToStringCaster implements ValueCaster
 {
+    public function __serialize() : array
+    {
+        return [];
+    }
+
+    public function __unserialize(array $data) : void
+    {
+    }
+
     public function cast($value) : string
     {
         /** @phpstan-ignore-next-line */

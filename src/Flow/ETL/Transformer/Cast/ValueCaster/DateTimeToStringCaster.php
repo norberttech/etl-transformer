@@ -19,6 +19,26 @@ final class DateTimeToStringCaster implements ValueCaster
         $this->format = $format;
     }
 
+    /**
+     * @return array{format: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'format' => $this->format,
+        ];
+    }
+
+    /**
+     * @param array{format: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->format = $data['format'];
+    }
+
     public function cast($value) : string
     {
         if (!$value instanceof \DateTimeInterface) {

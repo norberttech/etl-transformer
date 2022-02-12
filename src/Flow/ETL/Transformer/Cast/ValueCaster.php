@@ -2,10 +2,12 @@
 
 namespace Flow\ETL\Transformer\Cast;
 
+use Flow\Serializer\Serializable;
+
 /**
  * @psalm-immutable
  */
-interface ValueCaster
+interface ValueCaster extends Serializable
 {
     /**
      * @psalm-pure

@@ -40,6 +40,28 @@ final class StringEntryValueCaseConverterTransformer implements Transformer
         return new self(self::CASE_LOWER, ...$entryNames);
     }
 
+    /**
+     * @return array{case: string, entry_names: array<string>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'case' => $this->case,
+            'entry_names' => $this->entryNames,
+        ];
+    }
+
+    /**
+     * @param array{case: string, entry_names: array<string>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->case = $data['case'];
+        $this->entryNames = $data['entry_names'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

@@ -23,6 +23,28 @@ final class ConditionalTransformer implements Transformer
         $this->transformer = $transformer;
     }
 
+    /**
+     * @return array{condition: Condition\RowCondition,transformer: Transformer}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'condition' => $this->condition,
+            'transformer' => $this->transformer,
+        ];
+    }
+
+    /**
+     * @param array{condition: Condition\RowCondition, transformer: Transformer} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->condition = $data['condition'];
+        $this->transformer = $data['transformer'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

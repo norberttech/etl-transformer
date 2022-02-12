@@ -29,6 +29,29 @@ final class Callback implements Filter
         $this->callback = $callback;
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     *
+     * @return array{callback: pure-callable(Row $row) : bool}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'callback' => $this->callback,
+        ];
+    }
+
+    /**
+     * @phpstan-ignore-next-line
+     * @psalm-suppress MoreSpecificImplementedParamType
+     *
+     * @param array{callback: pure-callable(Row $row) : bool} $data
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->callback = $data['callback'];
+    }
+
     public function keep(Row $row) : bool
     {
         return ($this->callback)($row);

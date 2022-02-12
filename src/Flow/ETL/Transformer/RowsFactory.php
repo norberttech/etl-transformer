@@ -3,8 +3,9 @@
 namespace Flow\ETL\Transformer;
 
 use Flow\ETL\Rows;
+use Flow\Serializer\Serializable;
 
-interface RowsFactory
+interface RowsFactory extends Serializable
 {
     /**
      * @phpstan-ignore-next-line

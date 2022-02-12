@@ -34,6 +34,30 @@ final class StringConcatTransformer implements Transformer
         $this->newEntryName = $newEntryName;
     }
 
+    /**
+     * @return array{string_entry_names: array<string>, glue: string, new_entry_name: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'string_entry_names' => $this->stringEntryNames,
+            'glue' => $this->glue,
+            'new_entry_name' => $this->newEntryName,
+        ];
+    }
+
+    /**
+     * @param array{string_entry_names: array<string>, glue: string, new_entry_name: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->stringEntryNames = $data['string_entry_names'];
+        $this->glue = $data['glue'];
+        $this->newEntryName = $data['new_entry_name'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

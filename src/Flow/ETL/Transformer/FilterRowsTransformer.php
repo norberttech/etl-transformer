@@ -24,6 +24,26 @@ final class FilterRowsTransformer implements Transformer
         $this->filters = $filters;
     }
 
+    /**
+     * @return array{filters: array<Filter>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'filters' => $this->filters,
+        ];
+    }
+
+    /**
+     * @param array{filters: array<Filter>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->filters = $data['filters'];
+    }
+
     /** @psalm-suppress InvalidArgument */
     public function transform(Rows $rows) : Rows
     {

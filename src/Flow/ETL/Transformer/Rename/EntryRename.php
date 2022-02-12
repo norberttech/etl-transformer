@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Transformer\Rename;
 
+use Flow\Serializer\Serializable;
+
 /**
  * @psalm-immutable
  */
-final class EntryRename
+final class EntryRename implements Serializable
 {
     private string $from;
 
@@ -17,6 +19,28 @@ final class EntryRename
     {
         $this->from = $from;
         $this->to = $to;
+    }
+
+    /**
+     * @return array{from: string, to: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'from' => $this->from,
+            'to' => $this->to,
+        ];
+    }
+
+    /**
+     * @param array{from: string, to: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->from = $data['from'];
+        $this->to = $data['to'];
     }
 
     /**

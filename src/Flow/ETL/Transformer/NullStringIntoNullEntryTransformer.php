@@ -23,6 +23,26 @@ final class NullStringIntoNullEntryTransformer implements Transformer
         $this->entryNames = $entryNames;
     }
 
+    /**
+     * @return array{entry_names: array<string>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'entry_names' => $this->entryNames,
+        ];
+    }
+
+    /**
+     * @param array{entry_names: array<string>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->entryNames = $data['entry_names'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

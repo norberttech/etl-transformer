@@ -3,8 +3,9 @@
 namespace Flow\ETL\Transformer;
 
 use Flow\ETL\Row\Entry;
+use Flow\Serializer\Serializable;
 
-interface EntryFactory
+interface EntryFactory extends Serializable
 {
     /**
      * @param string $entryName

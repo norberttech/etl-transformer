@@ -31,6 +31,28 @@ final class ArrayMergeTransformer implements Transformer
         $this->newEntryName = $newEntryName;
     }
 
+    /**
+     * @return array{array_entries: array<string>, new_entry_name: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'array_entries' => $this->arrayEntries,
+            'new_entry_name' => $this->newEntryName,
+        ];
+    }
+
+    /**
+     * @param array{array_entries: array<string>, new_entry_name: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->arrayEntries = $data['array_entries'];
+        $this->newEntryName = $data['new_entry_name'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

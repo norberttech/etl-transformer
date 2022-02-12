@@ -14,6 +14,15 @@ final class AnyToJsonCaster implements ValueCaster
 {
     private const JSON_DEPTH = 512;
 
+    public function __serialize() : array
+    {
+        return [];
+    }
+
+    public function __unserialize(array $data) : void
+    {
+    }
+
     /**
      * @param mixed $value
      *

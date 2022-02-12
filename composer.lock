@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flow-php/array-dot.git",
-                "reference": "713b19fe8e6e91d58793bd9072a500d27d44e61f"
+                "reference": "f473d791f4c9ab5551cbfa7762f9c2408ab6adb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flow-php/array-dot/zipball/713b19fe8e6e91d58793bd9072a500d27d44e61f",
-                "reference": "713b19fe8e6e91d58793bd9072a500d27d44e61f",
+                "url": "https://api.github.com/repos/flow-php/array-dot/zipball/f473d791f4c9ab5551cbfa7762f9c2408ab6adb4",
+                "reference": "f473d791f4c9ab5551cbfa7762f9c2408ab6adb4",
                 "shasum": ""
             },
             "require": {
@@ -26,14 +26,14 @@
             "default-branch": true,
             "type": "library",
             "autoload": {
+                "files": [
+                    "src/Flow/ArrayDot/array_dot.php"
+                ],
                 "psr-4": {
                     "Flow\\": [
                         "src/Flow"
                     ]
-                },
-                "files": [
-                    "src/Flow/ArrayDot/array_dot.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -53,7 +53,7 @@
                 "issues": "https://github.com/flow-php/array-dot/issues",
                 "source": "https://github.com/flow-php/array-dot/tree/1.x"
             },
-            "time": "2022-01-24T21:21:01+00:00"
+            "time": "2022-02-07T21:21:50+00:00"
         },
         {
             "name": "flow-php/etl",
@@ -61,12 +61,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flow-php/etl.git",
-                "reference": "0e0a7e51c67f27db180ebadb5d6674a9e0c5f994"
+                "reference": "22a7b708e099339324a7d797e700af0258fc5663"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flow-php/etl/zipball/0e0a7e51c67f27db180ebadb5d6674a9e0c5f994",
-                "reference": "0e0a7e51c67f27db180ebadb5d6674a9e0c5f994",
+                "url": "https://api.github.com/repos/flow-php/etl/zipball/22a7b708e099339324a7d797e700af0258fc5663",
+                "reference": "22a7b708e099339324a7d797e700af0258fc5663",
                 "shasum": ""
             },
             "require": {
@@ -97,7 +97,7 @@
                 "issues": "https://github.com/flow-php/etl/issues",
                 "source": "https://github.com/flow-php/etl/tree/1.x"
             },
-            "time": "2022-01-27T10:26:55+00:00"
+            "time": "2022-02-12T20:03:05+00:00"
         }
     ],
     "packages-dev": [
@@ -107,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flow-php/etl-adapter-json.git",
-                "reference": "e2725701bb64f94c0f232e7eab7e2bc21b053572"
+                "reference": "d964c74d42de07ff04fa516a7e24ac8a39840b1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flow-php/etl-adapter-json/zipball/e2725701bb64f94c0f232e7eab7e2bc21b053572",
-                "reference": "e2725701bb64f94c0f232e7eab7e2bc21b053572",
+                "url": "https://api.github.com/repos/flow-php/etl-adapter-json/zipball/d964c74d42de07ff04fa516a7e24ac8a39840b1e",
+                "reference": "d964c74d42de07ff04fa516a7e24ac8a39840b1e",
                 "shasum": ""
             },
             "require": {
@@ -121,7 +121,7 @@
                 "php": "^7.4 | ^8.0"
             },
             "require-dev": {
-                "halaxa/json-machine": "^0.8.0"
+                "halaxa/json-machine": "^0.8.0 || ^1.0.0"
             },
             "suggest": {
                 "halaxa/json-machine": "Memory safe json library used by Extractors and Loaders"
@@ -152,7 +152,7 @@
                 "issues": "https://github.com/flow-php/etl-adapter-json/issues",
                 "source": "https://github.com/flow-php/etl-adapter-json/tree/1.x"
             },
-            "time": "2022-01-24T22:12:58+00:00"
+            "time": "2022-02-12T20:54:37+00:00"
         },
         {
             "name": "jawira/case-converter",
@@ -540,12 +540,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -617,12 +617,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php73\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php73\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -696,12 +696,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -750,6 +750,85 @@
                 }
             ],
             "time": "2021-09-13T13:58:33+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php81",
+            "version": "v1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php81.git",
+                "reference": "5de4ba2d41b15f9bd0e19b2ab9674135813ec98f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/5de4ba2d41b15f9bd0e19b2ab9674135813ec98f",
+                "reference": "5de4ba2d41b15f9bd0e19b2ab9674135813ec98f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php81\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.1+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.24.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-09-13T13:58:11+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -831,16 +910,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v5.4.2",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "6ad607e0bb8f3a8b04bf56fecb9a95ac55cea9a3"
+                "reference": "b420894e98f414b9ad5d4494650bf281f6dd6028"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/6ad607e0bb8f3a8b04bf56fecb9a95ac55cea9a3",
-                "reference": "6ad607e0bb8f3a8b04bf56fecb9a95ac55cea9a3",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/b420894e98f414b9ad5d4494650bf281f6dd6028",
+                "reference": "b420894e98f414b9ad5d4494650bf281f6dd6028",
                 "shasum": ""
             },
             "require": {
@@ -850,6 +929,7 @@
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php73": "~1.0",
                 "symfony/polyfill-php80": "^1.16",
+                "symfony/polyfill-php81": "^1.22",
                 "symfony/translation-contracts": "^1.1|^2|^3"
             },
             "conflict": {
@@ -923,7 +1003,7 @@
             "description": "Provides tools to validate values",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/validator/tree/v5.4.2"
+                "source": "https://github.com/symfony/validator/tree/v5.4.3"
             },
             "funding": [
                 {
@@ -939,7 +1019,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-21T11:59:32+00:00"
+            "time": "2022-01-26T16:28:35+00:00"
         },
         {
             "name": "webmozart/assert",

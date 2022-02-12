@@ -13,6 +13,15 @@ final class NativeEntryFactory implements EntryFactory
 {
     private const JSON_DEPTH = 512;
 
+    public function __serialize() : array
+    {
+        return [];
+    }
+
+    public function __unserialize(array $data) : void
+    {
+    }
+
     public function createEntry(string $entryName, $value) : Entry
     {
         if (\is_string($value)) {

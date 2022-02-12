@@ -32,6 +32,30 @@ class CastEntries implements CastRow
         $this->caster = $caster;
     }
 
+    /**
+     * @return array{entry_names: array<string>, nullable: boolean, caster: EntryCaster}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'entry_names' => $this->entryNames,
+            'nullable' => $this->nullable,
+            'caster' => $this->caster,
+        ];
+    }
+
+    /**
+     * @param array{entry_names: array<string>, nullable: boolean, caster: EntryCaster} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->entryNames = $data['entry_names'];
+        $this->nullable = $data['nullable'];
+        $this->caster = $data['caster'];
+    }
+
     final public function cast(Row $row) : Row
     {
         foreach ($this->entryNames as $entryName) {

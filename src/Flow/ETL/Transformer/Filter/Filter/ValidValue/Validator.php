@@ -2,7 +2,9 @@
 
 namespace Flow\ETL\Transformer\Filter\Filter\ValidValue;
 
-interface Validator
+use Flow\Serializer\Serializable;
+
+interface Validator extends Serializable
 {
     /**
      * @param mixed $value

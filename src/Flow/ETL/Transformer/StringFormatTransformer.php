@@ -23,6 +23,28 @@ final class StringFormatTransformer implements Transformer
         $this->format = $format;
     }
 
+    /**
+     * @return array{entry_name: string, format: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'entry_name' => $this->entryName,
+            'format' => $this->format,
+        ];
+    }
+
+    /**
+     * @param array{entry_name: string, format: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->entryName = $data['entry_name'];
+        $this->format = $data['format'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /**

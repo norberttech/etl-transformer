@@ -12,6 +12,15 @@ use Flow\ETL\Transformer\Cast\ValueCaster;
  */
 final class JsonToArrayCaster implements ValueCaster
 {
+    public function __serialize() : array
+    {
+        return [];
+    }
+
+    public function __unserialize(array $data) : void
+    {
+    }
+
     /**
      * @param mixed $value
      *

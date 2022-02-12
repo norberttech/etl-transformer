@@ -23,6 +23,28 @@ final class CloneEntryTransformer implements Transformer
         $this->to = $to;
     }
 
+    /**
+     * @return array{from: string, to: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'from' => $this->from,
+            'to' => $this->to,
+        ];
+    }
+
+    /**
+     * @param array{from: string, to: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->from = $data['from'];
+        $this->to = $data['to'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /** @psalm-var pure-callable(\Flow\ETL\Row) : \Flow\ETL\Row $clone */

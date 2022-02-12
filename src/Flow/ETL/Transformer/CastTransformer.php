@@ -23,6 +23,26 @@ final class CastTransformer implements Transformer
         $this->rowCasts = $rowCasts;
     }
 
+    /**
+     * @return array{row_casts: array<Transformer\Cast\CastRow>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'row_casts' => $this->rowCasts,
+        ];
+    }
+
+    /**
+     * @param array{row_casts: array<Transformer\Cast\CastRow>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->rowCasts = $data['row_casts'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         /** @psalm-var pure-callable(Row $row) : Row $transformer */

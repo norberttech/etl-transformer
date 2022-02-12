@@ -23,6 +23,26 @@ final class RenameEntriesTransformer implements Transformer
         $this->entryRenames = $entryRenames;
     }
 
+    /**
+     * @return array{entry_renames: array<Transformer\Rename\EntryRename>}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'entry_renames' => $this->entryRenames,
+        ];
+    }
+
+    /**
+     * @param array{entry_renames: array<Transformer\Rename\EntryRename>} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->entryRenames = $data['entry_renames'];
+    }
+
     public function transform(Rows $rows) : Rows
     {
         foreach ($this->entryRenames as $entryRename) {

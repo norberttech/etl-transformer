@@ -38,6 +38,32 @@ final class ArrayUnpackTransformer implements Transformer
     }
 
     /**
+     * @return array{array_entry_name: string, skip_entry_names: array<string>, entry_factory: EntryFactory, entry_prefix: null|string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'array_entry_name' => $this->arrayEntryName,
+            'skip_entry_names' => $this->skipEntryNames,
+            'entry_factory' => $this->entryFactory,
+            'entry_prefix' => $this->entryPrefix,
+        ];
+    }
+
+    /**
+     * @param array{array_entry_name: string, skip_entry_names: array<string>, entry_factory: EntryFactory, entry_prefix: null|string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->arrayEntryName = $data['array_entry_name'];
+        $this->skipEntryNames = $data['skip_entry_names'];
+        $this->entryFactory = $data['entry_factory'];
+        $this->entryPrefix = $data['entry_prefix'];
+    }
+
+    /**
      * @psalm-suppress InvalidArgument
      * @psalm-suppress InvalidScalarArgument
      * @psalm-suppress MixedArgument

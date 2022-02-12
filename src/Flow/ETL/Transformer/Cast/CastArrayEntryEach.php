@@ -21,6 +21,28 @@ class CastArrayEntryEach implements CastRow
         $this->caster = $caster;
     }
 
+    /**
+     * @return array{caster: ValueCaster, array_entry_name: string}
+     */
+    public function __serialize() : array
+    {
+        return [
+            'array_entry_name' => $this->arrayEntryName,
+            'caster' => $this->caster,
+        ];
+    }
+
+    /**
+     * @param array{caster: ValueCaster, array_entry_name: string} $data
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function __unserialize(array $data) : void
+    {
+        $this->arrayEntryName = $data['array_entry_name'];
+        $this->caster = $data['caster'];
+    }
+
     final public function cast(Row $row) : Row
     {
         if (!$row->entries()->has($this->arrayEntryName)) {
