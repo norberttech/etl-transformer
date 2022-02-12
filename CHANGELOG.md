@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-01-28
+## [Unreleased] - 2022-02-12
 
 ### Added
 - [d49279](https://github.com/flow-php/etl-transformer/commit/d49279038d01ec6ca2ae73ebf0b05d185babeb33) - **list of all available transformers** - [@norberttech](https://github.com/norberttech)
@@ -85,6 +85,7 @@
 - [2dcbd9](https://github.com/flow-php/etl-transformer/commit/2dcbd969dd06c3afb3f8bf9d77b9fa3e576ad96c) - **Initial commit** - [@DawidSajdak](https://github.com/DawidSajdak)
 
 ### Fixed
+- [#175](https://github.com/flow-php/etl-transformer/pull/175) - **Adjusted adapter for serialization** - [@norberttech](https://github.com/norberttech)
 - [#148](https://github.com/flow-php/etl-transformer/pull/148) - **Psalm errors** - [@tomaszhanc](https://github.com/tomaszhanc)
 - [#143](https://github.com/flow-php/etl-transformer/pull/143) - **PHP errors** - [@tomaszhanc](https://github.com/tomaszhanc)
 - [#103](https://github.com/flow-php/etl-transformer/pull/103) - **Added dependabot for tool** - [@tomaszhanc](https://github.com/tomaszhanc)
