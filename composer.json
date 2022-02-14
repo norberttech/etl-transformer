@@ -15,6 +15,7 @@
         "flow-php/etl-adapter-json": "^1.0@dev",
         "jawira/case-converter": "^3.4",
         "laminas/laminas-hydrator": "^4.0",
+        "opis/closure": "^3.5.1",
         "symfony/validator": "^5.3"
     },
     "suggest": {

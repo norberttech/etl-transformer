@@ -8,6 +8,7 @@ use Flow\ETL\Row;
 use Flow\ETL\Row\Entry;
 use Flow\ETL\Rows;
 use Flow\ETL\Transformer\CallbackEntryTransformer;
+use Flow\Serializer\NativePHPSerializer;
 use PHPUnit\Framework\TestCase;
 
 class CallbackEntryTransformerTest extends TestCase
@@ -42,6 +43,29 @@ class CallbackEntryTransformerTest extends TestCase
         );
 
         $rows = $callbackTransformer->transform(
+            new Rows(
+                Row::create(
+                    new Entry\StringEntry('string entry ', 'String entry')
+                )
+            )
+        );
+
+        $this->assertEquals(new Rows(
+            Row::create(
+                new Entry\StringEntry('string entry', 'String entry')
+            )
+        ), $rows);
+    }
+
+    public function test_removing_whitespace_with_trim_callback_with_serialization() : void
+    {
+        $callbackTransformer = new CallbackEntryTransformer(
+            fn (Entry $entry) : Entry => new $entry(\trim($entry->name()), $entry->value())
+        );
+
+        $serialization = new NativePHPSerializer();
+
+        $rows = $serialization->unserialize($serialization->serialize($callbackTransformer))->transform(
             new Rows(
                 Row::create(
                     new Entry\StringEntry('string entry ', 'String entry')

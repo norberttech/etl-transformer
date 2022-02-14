@@ -41,6 +41,19 @@ Set of ETL generic Transformers
     * [callback entry](src/Flow/ETL/Transformer/CallbackEntryTransformer.php)
     * [callback row](src/Flow/ETL/Transformer/CallbackRowTransformer.php)    
 
+## Serialization
+
+In order to allow serialization of callable base transformers please
+add into your dependencies [opis/closure](https://github.com/opis/closure) library:
+
+```
+{
+  "require": {
+    "opis/closure": "^3.5"
+  }
+}
+```
+
 
 ## Custom Transformer
 

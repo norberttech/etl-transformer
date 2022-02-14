@@ -4,16 +4,20 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Transformer;
 
+use Flow\ETL\Exception\RuntimeException;
 use Flow\ETL\Row;
 use Flow\ETL\Row\Entry;
 use Flow\ETL\Rows;
 use Flow\ETL\Transformer;
+use Opis\Closure\SerializableClosure;
 
 /**
  * @psalm-immutable
  */
 final class CallbackEntryTransformer implements Transformer
 {
+    private static ?bool $isSerializable = null;
+
     /**
      * @psalm-var array<pure-callable(Entry) : Entry>
      * @phpstan-var array<callable(Entry) : Entry>
@@ -31,26 +35,44 @@ final class CallbackEntryTransformer implements Transformer
     }
 
     /**
-     * @phpstan-ignore-next-line
-     *
-     * @return array{callables: array<pure-callable(Entry) : Entry>}
+     * @return array{callables: array<SerializableClosure>}
      */
     public function __serialize() : array
     {
+        /** @psalm-suppress ImpureMethodCall */
+        if (!self::isSerializable()) {
+            throw new RuntimeException('CallbackEntryTransformer is not serializable without "opis/closure" library in your dependencies.');
+        }
+
+        $closures = [];
+
+        foreach ($this->callables as $callable) {
+            $closures[] = new SerializableClosure(\Closure::fromCallable($callable));
+        }
+
         return [
-            'callables' => $this->callables,
+            'callables' => $closures,
         ];
     }
 
     /**
-     * @phpstan-ignore-next-line
-     *
-     * @param array{callables: array<pure-callable(Entry) : Entry>} $data
+     * @param array{callables: array<SerializableClosure>} $data
      * @psalm-suppress MoreSpecificImplementedParamType
      */
     public function __unserialize(array $data) : void
     {
-        $this->callables = $data['callables'];
+        /** @psalm-suppress ImpureMethodCall */
+        if (!self::isSerializable()) {
+            throw new RuntimeException('CallbackEntryTransformer is not serializable without "opis/closure" library in your dependencies.');
+        }
+
+        $callables = [];
+
+        foreach ($data['callables'] as $closure) {
+            $callables[] = $closure->getClosure();
+        }
+
+        $this->callables = $callables;
     }
 
     public function transform(Rows $rows) : Rows
@@ -72,5 +94,14 @@ final class CallbackEntryTransformer implements Transformer
         };
 
         return $rows->map($transform);
+    }
+
+    private static function isSerializable() : bool
+    {
+        if (self::$isSerializable === null) {
+            self::$isSerializable = \class_exists('Opis\Closure\SerializableClosure');
+        }
+
+        return self::$isSerializable;
     }
 }

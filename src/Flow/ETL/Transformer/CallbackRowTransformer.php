@@ -4,15 +4,19 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Transformer;
 
+use Flow\ETL\Exception\RuntimeException;
 use Flow\ETL\Row;
 use Flow\ETL\Rows;
 use Flow\ETL\Transformer;
+use Opis\Closure\SerializableClosure;
 
 /**
  * @psalm-immutable
  */
 final class CallbackRowTransformer implements Transformer
 {
+    private static ?bool $isSerializable = null;
+
     /**
      * @psalm-var pure-callable(Row) : Row
      * @phpstan-var callable(Row) : Row
@@ -30,30 +34,45 @@ final class CallbackRowTransformer implements Transformer
     }
 
     /**
-     * @phpstan-ignore-next-line
-     *
-     * @return array{callable: pure-callable(Row) : Row}
+     * @return array{callable: SerializableClosure}
      */
     public function __serialize() : array
     {
+        /** @psalm-suppress ImpureMethodCall */
+        if (!self::isSerializable()) {
+            throw new RuntimeException('CallbackRowTransformer is not serializable without "opis/closure" library in your dependencies.');
+        }
+
         return [
-            'callable' => $this->callable,
+            'callable' => new SerializableClosure(\Closure::fromCallable($this->callable)),
         ];
     }
 
     /**
-     * @phpstan-ignore-next-line
-     *
-     * @param array{callable: pure-callable(Row) : Row} $data
+     * @param array{callable: SerializableClosure} $data
      * @psalm-suppress MoreSpecificImplementedParamType
      */
     public function __unserialize(array $data) : void
     {
-        $this->callable = $data['callable'];
+        /** @psalm-suppress ImpureMethodCall */
+        if (!self::isSerializable()) {
+            throw new RuntimeException('CallbackRowTransformer is not serializable without "opis/closure" library in your dependencies.');
+        }
+
+        $this->callable = $data['callable']->getClosure();
     }
 
     public function transform(Rows $rows) : Rows
     {
         return $rows->map($this->callable);
+    }
+
+    private static function isSerializable() : bool
+    {
+        if (self::$isSerializable === null) {
+            self::$isSerializable = \class_exists('Opis\Closure\SerializableClosure');
+        }
+
+        return self::$isSerializable;
     }
 }
