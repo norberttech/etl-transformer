@@ -1,6 +1,7 @@
-## [Unreleased] - 2022-02-12
+## [Unreleased] - 2022-02-14
 
 ### Added
+- [#176](https://github.com/flow-php/etl-transformer/pull/176) - **Allow callable based Transfomers serialization** - [@norberttech](https://github.com/norberttech)
 - [d49279](https://github.com/flow-php/etl-transformer/commit/d49279038d01ec6ca2ae73ebf0b05d185babeb33) - **list of all available transformers** - [@norberttech](https://github.com/norberttech)
 - [#117](https://github.com/flow-php/etl-transformer/pull/117) - **Workflow to auto-merge dependabot PRs** - [@tomaszhanc](https://github.com/tomaszhanc)
 - [#81](https://github.com/flow-php/etl-transformer/pull/81) - **Added StringEntryValueCaseConverterTransformer** - [@DawidSajdak](https://github.com/DawidSajdak)
