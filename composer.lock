@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flow-php/array-dot.git",
-                "reference": "f473d791f4c9ab5551cbfa7762f9c2408ab6adb4"
+                "reference": "d2c3af6b22917e3148a123212fd301ca8dc9b185"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flow-php/array-dot/zipball/f473d791f4c9ab5551cbfa7762f9c2408ab6adb4",
-                "reference": "f473d791f4c9ab5551cbfa7762f9c2408ab6adb4",
+                "url": "https://api.github.com/repos/flow-php/array-dot/zipball/d2c3af6b22917e3148a123212fd301ca8dc9b185",
+                "reference": "d2c3af6b22917e3148a123212fd301ca8dc9b185",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "issues": "https://github.com/flow-php/array-dot/issues",
                 "source": "https://github.com/flow-php/array-dot/tree/1.x"
             },
-            "time": "2022-02-07T21:21:50+00:00"
+            "time": "2022-02-18T16:46:32+00:00"
         },
         {
             "name": "flow-php/etl",
@@ -61,12 +61,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flow-php/etl.git",
-                "reference": "b5534480eff33a2135b87d9b10d53f5c8d3aa894"
+                "reference": "183499ee4fe583d48e93ad7394906c3fb2ab2837"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flow-php/etl/zipball/b5534480eff33a2135b87d9b10d53f5c8d3aa894",
-                "reference": "b5534480eff33a2135b87d9b10d53f5c8d3aa894",
+                "url": "https://api.github.com/repos/flow-php/etl/zipball/183499ee4fe583d48e93ad7394906c3fb2ab2837",
+                "reference": "183499ee4fe583d48e93ad7394906c3fb2ab2837",
                 "shasum": ""
             },
             "require": {
@@ -97,7 +97,7 @@
                 "issues": "https://github.com/flow-php/etl/issues",
                 "source": "https://github.com/flow-php/etl/tree/1.x"
             },
-            "time": "2022-02-14T08:52:35+00:00"
+            "time": "2022-02-15T06:12:18+00:00"
         }
     ],
     "packages-dev": [

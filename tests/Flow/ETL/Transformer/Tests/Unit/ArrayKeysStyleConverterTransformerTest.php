@@ -10,7 +10,7 @@ use Flow\ETL\Transformer\ArrayKeysStyleConverterTransformer;
 use Flow\ETL\Transformer\StyleConverter\StringStyles;
 use PHPUnit\Framework\TestCase;
 
-final class ArrayKeysStyleTransformerTest extends TestCase
+final class ArrayKeysStyleConverterTransformerTest extends TestCase
 {
     public function test_transforms_case_style_for_all_keys_in_array_entry() : void
     {
