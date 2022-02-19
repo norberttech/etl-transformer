@@ -4,42 +4,43 @@
 
 ## Description
 
-Set of ETL generic Transformers
+Set of ETL generic Transformers, for the detailed usage instruction please look into [tests](tests/Flow/ETL/Transformer/Tests/Unit).
 
 * **Generic**
-    * [cast](src/Flow/ETL/Transformer/CastTransformer.php)
-    * [chain](src/Flow/ETL/Transformer/ChainTransformer.php)
-    * [clone entry](src/Flow/ETL/Transformer/CloneEntryTransformer.php)
-    * [conditional](src/Flow/ETL/Transformer/ConditionalTransformer.php)
-    * [dynamic entry](src/Flow/ETL/Transformer/DynamicEntryTransformer.php)
-    * [entry name style converter](src/Flow/ETL/Transformer/EntryNameStyleConverterTransformer.php)
-    * [filter rows](src/Flow/ETL/Transformer/FilterRowsTransformer.php)
-    * [group to array](src/Flow/ETL/Transformer/GroupToArrayTransformer.php)
-    * [keep entries](src/Flow/ETL/Transformer/KeepEntriesTransformer.php)
-    * [math operation](src/Flow/ETL/Transformer/MathOperationTransformer.php)
-    * [remove entries](src/Flow/ETL/Transformer/RemoveEntriesTransformer.php)
-    * [rename entries](src/Flow/ETL/Transformer/RenameEntriesTransformer.php)
-    * [static entry](src/Flow/ETL/Transformer/StaticEntryTransformer.php)
+    * [cast](src/Flow/ETL/Transformer/CastTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/CastTransformerTest.php) 
+    * [chain](src/Flow/ETL/Transformer/ChainTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ChainTransformerTest.php) 
+    * [clone entry](src/Flow/ETL/Transformer/CloneEntryTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/CloneEntryTransformerTest.php) 
+    * [conditional](src/Flow/ETL/Transformer/ConditionalTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ConditionalTransformerTest.php) 
+    * [dynamic entry](src/Flow/ETL/Transformer/DynamicEntryTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/DynamicEntryTransformerTest.php) 
+    * [entry name style converter](src/Flow/ETL/Transformer/EntryNameStyleConverterTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/DynamicEntryTransformerTest.php) 
+    * [filter rows](src/Flow/ETL/Transformer/FilterRowsTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/FilterRowsTransformerTest.php) 
+    * [group to array](src/Flow/ETL/Transformer/GroupToArrayTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/GroupToArrayTransformerTest.php) 
+    * [keep entries](src/Flow/ETL/Transformer/KeepEntriesTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/KeepEntriesTransformerTest.php) 
+    * [math operation](src/Flow/ETL/Transformer/MathOperationTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/MathOperationTransformerTest.php) 
+    * [remove entries](src/Flow/ETL/Transformer/RemoveEntriesTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/RemoveEntriesTransformerTest.php) 
+    * [rename entries](src/Flow/ETL/Transformer/RenameEntriesTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/RenameEntriesTransformerTest.php) 
+    * [static entry](src/Flow/ETL/Transformer/StaticEntryTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/StaticEntryTransformerTest.php) 
 * **Array**
-    * [array get](src/Flow/ETL/Transformer/ArrayDotGetTransformer.php)
-    * [array rename](src/Flow/ETL/Transformer/ArrayDotRenameTransformer.php)
-    * [array expand](src/Flow/ETL/Transformer/ArrayExpandTransformer.php)
-    * [array keys style converter](src/Flow/ETL/Transformer/ArrayKeysStyleConverterTransformer.php)
-    * [array merge](src/Flow/ETL/Transformer/ArrayMergeTransformer.php)
-    * [array reverse](src/Flow/ETL/Transformer/ArrayReverseTransformer.php)
-    * [array sort](src/Flow/ETL/Transformer/ArraySortTransformer.php)
-    * [array unpack](src/Flow/ETL/Transformer/ArrayUnpackTransformer.php)
+    * [array collection get](src/Flow/ETL/Transformer/ArrayCollectionGetTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayCollectionGetTransformerTest.php)
+    * [array dot get](src/Flow/ETL/Transformer/ArrayDotGetTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayDotGetTransformerTest.php)
+    * [array rename](src/Flow/ETL/Transformer/ArrayDotRenameTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayDotRenameTransformerTest.php)
+    * [array expand](src/Flow/ETL/Transformer/ArrayExpandTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayExpandTransformerTest.php)
+    * [array keys style converter](src/Flow/ETL/Transformer/ArrayKeysStyleConverterTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayKeysStyleConverterTransformerTest.php)
+    * [array merge](src/Flow/ETL/Transformer/ArrayMergeTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayMergeTransformerTest.php)
+    * [array reverse](src/Flow/ETL/Transformer/ArrayMergeTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayMergeTransformerTest.php)
+    * [array sort](src/Flow/ETL/Transformer/ArraySortTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArraySortTransformerTest.php)
+    * [array unpack](src/Flow/ETL/Transformer/ArrayUnpackTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayUnpackTransformerTest.php)
 * **Object**
-    * [object method](src/Flow/ETL/Transformer/ObjectMethodTransformer.php)
-    * [object to array](src/Flow/ETL/Transformer/ObjectToArrayTransformer.php)
+    * [object method](src/Flow/ETL/Transformer/ObjectMethodTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ObjectMethodTransformerTest.php)
+    * [object to array](src/Flow/ETL/Transformer/ObjectToArrayTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ObjectToArrayTransformerTest.php)
 * **String**
-    * [null string into null entry](src/Flow/ETL/Transformer/NullStringIntoNullEntryTransformer.php)
-    * [string concat](src/Flow/ETL/Transformer/StringConcatTransformer.php)
-    * [string entry value case converter](src/Flow/ETL/Transformer/StringEntryValueCaseConverterTransformer.php)
-    * [string format](src/Flow/ETL/Transformer/StringFormatTransformer.php)
+    * [null string into null entry](src/Flow/ETL/Transformer/NullStringIntoNullEntryTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/NullStringIntoNullEntryTransformerTest.php)
+    * [string concat](src/Flow/ETL/Transformer/StringConcatTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/StringConcatTransformerTest.php)
+    * [string entry value case converter](src/Flow/ETL/Transformer/StringEntryValueCaseConverterTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/StringEntryValueCaseConverterTransformerTest.php)
+    * [string format](src/Flow/ETL/Transformer/StringFormatTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/StringFormatTransformerTest.php)
 * **Callback** - *Might come with performance degradation*
-    * [callback entry](src/Flow/ETL/Transformer/CallbackEntryTransformer.php)
-    * [callback row](src/Flow/ETL/Transformer/CallbackRowTransformer.php)    
+    * [callback entry](src/Flow/ETL/Transformer/CallbackEntryTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/CallbackEntryTransformerTest.php)
+    * [callback row](src/Flow/ETL/Transformer/CallbackRowTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/CallbackRowTransformerTest.php)    
 
 ## Serialization
 
@@ -79,31 +80,11 @@ class NotNorbertTransformer implements Transformer
 }
 ```
 
-## Transformer - FilterRows
+## Complex Transformers
 
-Filter out rows
+Below transformers might not be self descriptive and might require some additional options/dependencies. 
 
-```php 
-<?php
-
-use Flow\ETL\Transformer\Filter\EntryEqualsTo;
-use Flow\ETL\Transformer\FilterRowsTransformer;
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-
-$transformer = new FilterRowsTransformer(
-    new EntryEqualsTo('status', 'NEW'),
-);
-
-$transformer->transform(
-    new Rows(
-        Row::create(new Row\Entry\StringEntry('status', 'PENDING')),
-        Row::create(new Row\Entry\StringEntry('status', 'SHIPPED')),
-        Row::create(new Row\Entry\StringEntry('status', 'NEW')),
-    )
-);
-
-```
+### Transformer - FilterRows
 
 Available Filters
 
@@ -119,68 +100,9 @@ Available Filters
 - [Opposite](src/Flow/ETL/Transformer/Filter/Filter/Opposite.php)
 - [ValidValue](src/Flow/ETL/Transformer/Filter/Filter/ValidValue.php) - optionally integrates with [Symfony Validator](https://github.com/symfony/validator)
 
-## Transformer - Conditional
+### Transformer - Conditional
 
-Transforms only those Rows that met given condition. 
-
-```php 
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ChainTransformer;
-use Flow\ETL\Transformer\Condition\All;
-use Flow\ETL\Transformer\Condition\EntryValueEqualsTo;
-use Flow\ETL\Transformer\ConditionalTransformer;
-use Flow\ETL\Transformer\NewStaticEntryTransformer;
-
-$transformer = new ChainTransformer(
-    new ConditionalTransformer(
-        new All(
-            new EntryValueEqualsTo('first_name', 'Michael'),
-            new EntryValueEqualsTo('last_name', 'Jackson'),
-        ),
-        new NewStaticEntryTransformer(new Row\Entry\StringEntry('profession', 'singer'))
-    ),
-    new ConditionalTransformer(
-        new All(
-            new EntryValueEqualsTo('first_name', 'Rocky'),
-            new EntryValueEqualsTo('last_name', 'Balboa'),
-        ),
-        new NewStaticEntryTransformer(new Row\Entry\StringEntry('profession', 'boxer'))
-    )
-);
-
-$rows = new Rows(
-    Row::create(
-        new Row\Entry\IntegerEntry('id', 1),
-        new Row\Entry\StringEntry('first_name', 'Michael'),
-        new Row\Entry\StringEntry('last_name', 'Jackson'),
-    ),
-    Row::create(
-        new Row\Entry\IntegerEntry('id', 2),
-        new Row\Entry\StringEntry('first_name', 'Rocky'),
-        new Row\Entry\StringEntry('last_name', 'Balboa'),
-    )
-);
-
-$this->assertSame(
-    [
-        [
-            'id' => 1,
-            'first_name' => 'Michael',
-            'last_name' => 'Jackson',
-            'profession' => 'singer',
-        ],
-        [
-            'id' => 2,
-            'first_name' => 'Rocky',
-            'last_name' => 'Balboa',
-            'profession' => 'boxer',
-        ]
-    ],
-    $transformer->transform($rows)->toArray()
-);
-```
+Transforms only those Rows that met given condition.
 
 Available Conditions 
 
@@ -204,366 +126,28 @@ Available Conditions
 - [Opposite](src/Flow/ETL/Transformer/Condition/Opposite.php)
 - [ValidValue](src/Flow/ETL/Transformer/Condition/ValidValue) - optionally integrates with [Symfony Validator](https://github.com/symfony/validator)
 
-## Transformer - RemoveEntriesTransformer
 
-Remove transformers by name from each row.
+### Transformer - Cast
 
-```php
-<?php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\RemoveEntriesTransformer;
-
-$transformer = new RemoveEntriesTransformer('id', 'array');
-
-$transformer->transform(
-    Row::create(
-        new Row\Entry\IntegerEntry('id', 1),
-        new Row\Entry\StringEntry('name', 'Row Name'),
-        new Row\Entry\ArrayEntry('array', ['test'])
-    )
-);
-```
-
-## Transformer - ArraySort
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Row\Entry\ArrayEntry;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ArraySortTransformer;
-
-$arrayEntry = new ArrayEntry(
-    'array',
-    [
-        5,
-        3,
-        10,
-        4
-    ]
-);
-
-$transformer = new ArraySortTransformer('array', \SORT_REGULAR);
-
-$this->assertSame(
-    [
-        [
-            'array' => [3, 4, 5, 10]
-        ]
-    ],
-    $transformer->transform(new Rows(Row::create($arrayEntry)))->toArray()
-);
-```
-
-## Transformer - ArrayReverse
-
-```php
-use Flow\ETL\Row;
-use Flow\ETL\Row\Entry\ArrayEntry;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ArrayReverseTransformer;
-
-$arrayEntry = new ArrayEntry(
-    'array',
-    [
-        5,
-        3,
-        10,
-        4,
-    ]
-);
-
-$transformer = new ArrayReverseTransformer('array', \SORT_REGULAR);
-
-$this->assertSame(
-    [
-        [
-            'array' => [4, 10, 3, 5],
-        ],
-    ],
-    $transformer->transform(new Rows(Row::create($arrayEntry)))->toArray()
-);
-```
-
-## Transformer - ArrayMerge
-
-```php
-use Flow\ETL\Row;
-use Flow\ETL\Row\Entry\ArrayEntry;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ArrayMergeTransformer;
-
-$arrayOneEntry = new ArrayEntry(
-    'array_one',
-    [
-        5,
-        3,
-        10,
-        4,
-    ]
-);
-$arrayTwoEntry = new ArrayEntry(
-    'array_two',
-    [
-        'A',
-        'Z',
-        'C',
-        'O',
-    ]
-);
-
-$transformer = new ArrayMergeTransformer(['array_one', 'array_two']);
-
-$this->assertSame(
-    [
-        [
-            'array_one' => [5, 3, 10, 4],
-            'array_two' => ['A', 'Z', 'C', 'O'],
-            'merged' => [5, 3, 10, 4, 'A', 'Z', 'C', 'O'],
-        ],
-    ],
-    $transformer->transform(new Rows(Row::create($arrayOneEntry, $arrayTwoEntry)))->toArray()
-);
-```
-
-## Transformer - ArrayUnpack
-
-Unpacks ArrayEntry into dedicated Entries detecting each array element type.
-
-```php
-<?php
-
-use Flow\ETL\Exception\RuntimeException;
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ArrayUnpackTransformer;
-use Flow\ETL\Transformer\RemoveEntriesTransformer;
-
-$arrayUnpackTransformer = new ArrayUnpackTransformer('array_entry');
-
-$rows = (new RemoveEntriesTransformer('array_entry'))->transform(
-    $arrayUnpackTransformer->transform(
-        new Rows(
-            Row::create(
-                new Row\Entry\ArrayEntry('array_entry', [
-                    'id' => 1,
-                    'status' => 'PENDING',
-                    'enabled' => true,
-                    'datetime' =>  new \DateTimeImmutable('2020-01-01 00:00:00 UTC'),
-                    'array' => ['foo', 'bar'],
-                    'json' => '["foo", "bar"]',
-                    'object' => new \stdClass(),
-                    'null' => null,
-                ]),
-            ),
-        ),
-    )
-);
-
-$this->assertEquals(
-    new Rows(
-        Row::create(
-            new Row\Entry\IntegerEntry('id', 1),
-            new Row\Entry\StringEntry('status', 'PENDING'),
-            new Row\Entry\BooleanEntry('enabled', true),
-            new Row\Entry\DateTimeEntry('datetime', new \DateTimeImmutable('2020-01-01 00:00:00 UTC')),
-            new Row\Entry\ArrayEntry('array', ['foo', 'bar']),
-            new Row\Entry\JsonEntry('json', ['foo', 'bar']),
-            new Row\Entry\ObjectEntry('object', new \stdClass()),
-            new Row\Entry\NullEntry('null')
-        ),
-    ),
-    $rows
-);
-```
-
-## Transformer - Keep Entries
-
-```php
-<?php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\KeepEntriesTransformer;
-
-$rows = new Rows(
-    Row::create(
-        new Row\Entry\IntegerEntry('id', 1),
-        new Row\Entry\StringEntry('name', 'Row Name'),
-        new Row\Entry\ArrayEntry('array', ['test'])
-    )
-);
-
-$transformer = new KeepEntriesTransformer('name');
-
-$this->assertSame(
-    [
-        ['name' => 'Row Name'],
-    ],
-    $transformer->transform($rows)->toArray()
-);
-```
-
-## Transformer - ObjectToArray
-
-This transformer requires `laminas/laminas-hydrator` or `ocramius/generated-hydrator` in the project
-
-```
-composer require laminas/laminas-hydrator
-```
-
-```php
-<?php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ObjectToArrayTransformer;
-use Flow\ETL\Transformer\Tests\Fixtures\Example;
-use GeneratedHydrator\Configuration;
-
-$objectToArrayTransformer = new ObjectToArrayTransformer(
-    (new Configuration(Example::class))->createFactory()->getHydrator(),
-    'object_entry'
-);
-
-$rows = $objectToArrayTransformer->transform(
-    new Rows(
-        Row::create(
-            new Row\Entry\IntegerEntry('old_int', 1000),
-            new Row\Entry\ObjectEntry('object_entry', new Example()),
-        ),
-    ),
-);
-
-$this->assertEquals(
-    new Rows(
-        Row::create(
-            new Row\Entry\IntegerEntry('old_int', 1000),
-            new Row\Entry\ArrayEntry('object_entry', [
-                'foo' => 1,
-                'bar' => 2,
-                'baz' => 3,
-                'bad' => new \DateTimeImmutable('2020-01-01 00:00:00 UTC'),
-            ])
-        ),
-    ),
-    $rows
-);
-
-```
-
-## Transformer - RenameEntries 
-
-
-```php 
-<?php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\RenameEntries\EntryRename;
-use Flow\ETL\Transformer\RenameEntriesTransformer;
-
-$renameTransformer = new RenameEntriesTransformer(
-    new EntryRename('old_int', 'new_int'),
-    new EntryRename('null', 'nothing')
-);
-
-$rows = $renameTransformer->transform(
-    new Rows(
-        Row::create(
-            new Row\Entry\IntegerEntry('old_int', 1000),
-            new Row\Entry\IntegerEntry('id', 1),
-            new Row\Entry\StringEntry('status', 'PENDING'),
-            new Row\Entry\BooleanEntry('enabled', true),
-            new Row\Entry\DateTimeEntry('datetime', new \DateTimeImmutable('2020-01-01 00:00:00 UTC')),
-            new Row\Entry\ArrayEntry('array', ['foo', 'bar']),
-            new Row\Entry\JsonEntry('json', ['foo', 'bar']),
-            new Row\Entry\ObjectEntry('object', new \stdClass()),
-            new Row\Entry\NullEntry('null')
-        ),
-    ),
-);
-
-$this->assertEquals(
-    new Rows(
-        Row::create(
-            new Row\Entry\IntegerEntry('id', 1),
-            new Row\Entry\StringEntry('status', 'PENDING'),
-            new Row\Entry\BooleanEntry('enabled', true),
-            new Row\Entry\DateTimeEntry('datetime', new \DateTimeImmutable('2020-01-01 00:00:00 UTC')),
-            new Row\Entry\ArrayEntry('array', ['foo', 'bar']),
-            new Row\Entry\JsonEntry('json', ['foo', 'bar']),
-            new Row\Entry\ObjectEntry('object', new \stdClass()),
-            new Row\Entry\IntegerEntry('new_int', 1000),
-            new Row\Entry\NullEntry('nothing')
-        ),
-    ),
-    $rows
-);
-```
-
-## Transformer - Cast
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\Cast\CastToDateTime;
-use Flow\ETL\Transformer\CastTransformer;
-
-$entry = new StringEntry('date', '2020-01-01 00:00:00 UTC');
-$transformer = new CastTransformer(new CastToDateTime('date', 'Y-m-d H:i:s.P'));
-$rows = $transformer->transform(new Rows(new Row(new Row\Entries($entry))));
-
-$this->assertInstanceOf(DateTimeEntry::class, $rows->first()->get('date'));
-$this->assertSame('2020-01-01 00:00:00.+00:00', $rows->first()->valueOf('date'));
-```
 
 Casting Types: 
 
-* `Flow\ETL\Transformer\Cast\CastToDateTime`
-* `Flow\ETL\Transformer\Cast\CastToDate`
-* `Flow\ETL\Transformer\Cast\CastToString`
-* `Flow\ETL\Transformer\Cast\CastToInteger`
-* `Flow\ETL\Transformer\Cast\CastToJson`
-* `Flow\ETL\Transformer\Cast\CastToArray`
-* `Flow\ETL\Transformer\Cast\CastJsonToArray`
+* [CastEntries](src/Flow/ETL/Transformer/Cast/CastEntries.php)
+* [CastArrayEntryEach](src/Flow/ETL/Transformer/Cast/CastArrayEntryEach.php)  
+* [CastToDateTime](src/Flow/ETL/Transformer/Cast/CastToDateTime.php)
+* [CastToString](src/Flow/ETL/Transformer/Cast/CastToString.php)
+* [CastToInteger](src/Flow/ETL/Transformer/Cast/CastToInteger.php)
+* [CastToFloat](src/Flow/ETL/Transformer/Cast/CastToFloat.php)  
+* [CastToJson](src/Flow/ETL/Transformer/Cast/CastToJson.php)
+* [CastToArray](src/Flow/ETL/Transformer/Cast/CastToArray.php)
+* [CastJsonToArray](src/Flow/ETL/Transformer/Cast/CastJsonToArray.php)
 
-## Transformer - EntryNameStyleConverter
+### Transformer - EntryNameStyleConverter
 
 This transformer requires `jawira/case-converter` in the project
 
 ```
 composer require jawira/case-converter
-```
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\EntryNameStyleConverterTransformer;
-use Flow\ETL\Transformer\StyleConverter\StringStyles;
-
-$transformer = new EntryNameStyleConverterTransformer(StringStyles::SNAKE);
-
-$rows = $transformer->transform(new Rows(
-    Row::create(
-        new Row\Entry\StringEntry('CamelCaseEntryName', 'test'),
-        new Row\Entry\StringEntry('otherCaseEntryName', 'test'),
-    )
-));
-
-$this->assertSame(
-    [
-        [
-            'camel_case_entry_name' => 'test',
-            'other_case_entry_name' => 'test'
-        ]
-    ],
-    $rows->toArray()
-);
 ```
 
 Supported styles: 
@@ -586,92 +170,12 @@ public const DOT = 'dot';
 
 For the more details, please visit [jawira/case-converter](https://github.com/jawira/case-converter) documentation.
 
-## Transformer - StringEntryValueCaseConverterTransformer
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\StringEntryValueCaseConverterTransformer;
-
-$transformer = StringEntryValueCaseConverterTransformer:upper('CamelCaseEntryName');
-
-$rows = $transformer->transform(new Rows(
-    Row::create(
-        new Row\Entry\StringEntry('CamelCaseEntryName', 'test'),
-        new Row\Entry\StringEntry('otherCaseEntryName', 'test'),
-    )
-));
-
-$this->assertSame(
-    [
-        [
-            'CamelCaseEntryName' => 'TEST',
-            'otherCaseEntryName' => 'test'
-        ]
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - ArrayKeysStyleConverter
+### Transformer - ArrayKeysStyleConverter
 
 This transformer requires `jawira/case-converter` in the project.
 
 ```
 composer require jawira/case-converter
-```
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ArrayKeysStyleConverterTransformer;
-use Flow\ETL\Transformer\StyleConverter\StringStyles;
-
-$transformer = new ArrayKeysStyleConverterTransformer('arrayEntry', StringStyles::SNAKE);
-
-$rows = $transformer->transform(new Rows(
-    Row::create(
-        new Row\Entry\ArrayEntry(
-            'arrayEntry',
-            [               
-                'variantStatuses' => [
-                    [
-                        'statusId' => 1000,
-                        'statusName' => 'NEW',
-                    ],
-                    [
-                        'statusId' => 2000,
-                        'statusName' => 'ACTIVE',
-                    ],
-                ],
-                'variantName' => 'Variant Name'
-            ],
-        )
-    )
-));
-
-$this->assertSame(
-    [
-        [
-            'arrayEntry' => [
-                'variant_statuses' => [
-                    [
-                        'status_id' => 1000,
-                        'status_name' => 'NEW',
-                    ],
-                    [
-                        'status_id' => 2000,
-                        'status_name' => 'ACTIVE',
-                    ],
-                ],
-                'variant_name' => 'Variant Name',
-            ],
-        ],
-    ],
-    $rows->toArray()
-);
 ```
 
 Supported styles:
@@ -694,522 +198,17 @@ public const DOT = 'dot';
 
 For the more details, please visit [jawira/case-converter](https://github.com/jawira/case-converter) documentation.
 
-## Transformer - CallbackEntry
+### Transformer - ArrayDotGet
 
-```php
-<?php
+Read more about dot notation in [flow-php/array-dot](https://github.com/flow-php/array-dot) documentation.
 
-use Flow\ETL\Row;
-use Flow\ETL\Row\Entry;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\CallbackEntryTransformer;
-
-$callbackTransformer = new CallbackEntryTransformer(
-    fn (Entry $entry) : Entry => new $entry(\str_replace('-', '_', $entry->name()), $entry->value())
-);
-
-$rows = $callbackTransformer->transform(
-    new Rows(
-        Row::create(
-            new Row\Entry\IntegerEntry('old-int', 1000),
-            new Entry\StringEntry('string-entry ', 'String entry')
-        )
-    )
-);
-
-$this->assertEquals(new Rows(
-    Row::create(
-        new Row\Entry\IntegerEntry('old_int', 1000),
-        new Entry\StringEntry('string_entry ', 'String entry')
-    )
-), $rows);
-```
-
-## Transformer - ArrayExpand
-
-This transformer takes array and expands it elements into new rows. It can take an array of anything, including 
-an array of other arrays. 
-
-```php 
-
-use Flow\ETL\Exception\RuntimeException;
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ArrayExpandTransformer;
-use Flow\ETL\Transformer\ArrayUnpackTransformer;
-
-$arrayExpandTransformer = new ArrayExpandTransformer('array_entry');
-
-$rows = $arrayExpandTransformer->transform(
-    new Rows(
-        Row::create(
-            new Row\Entry\StringEntry('string_entry', 'foo'),
-            new Row\Entry\ArrayEntry('array_entry', [1, 2]),
-        ),
-    ),
-);
-
-$this->assertEquals(
-    [
-        [
-            'element' => 1,
-            'string_entry' => 'foo',
-        ],
-        [
-            'element' => 2,
-            'string_entry' => 'foo',
-        ],
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - GroupToArray
-
-Transform each row to array and group under new ArrayEntry.
-
-This transformer is not capable to group across different `Rows`, use it only when
-all `Row` elements that should be grouped are available in a single `Rows` instance.
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\GroupToArrayTransformer;
-
-$rows = new Rows(
-    Row::create(
-        new Row\Entry\IntegerEntry('order_id', 1),
-        new Row\Entry\StringEntry('sku', 'SKU-01'),
-        new Row\Entry\IntegerEntry('quantity', 1),
-        new Row\Entry\FloatEntry('price', 10.00),
-        new Row\Entry\StringEntry('currency', 'PLN'),
-    ),
-    Row::create(
-        new Row\Entry\IntegerEntry('order_id', 1),
-        new Row\Entry\StringEntry('sku', 'SKU-02'),
-        new Row\Entry\IntegerEntry('quantity', 1),
-        new Row\Entry\FloatEntry('price', 5.00),
-        new Row\Entry\StringEntry('currency', 'PLN'),
-    ),
-    Row::create(
-        new Row\Entry\IntegerEntry('order_id', 2),
-        new Row\Entry\StringEntry('sku', 'SKU-01'),
-        new Row\Entry\IntegerEntry('quantity', 1),
-        new Row\Entry\FloatEntry('price', 10.00),
-        new Row\Entry\StringEntry('currency', 'PLN'),
-    )
-);
-
-$transformer = new GroupToArrayTransformer('order_id', 'order_line_items');
-
-$this->assertSame(
-    [
-        [
-            'order_line_items' => [
-                [
-                    'order_id' => 1,
-                    'sku' => 'SKU-01',
-                    'quantity' => 1,
-                    'price' => 10.0,
-                    'currency' => 'PLN',
-                ],
-                [
-                    'order_id' => 1,
-                    'sku' => 'SKU-02',
-                    'quantity' => 1,
-                    'price' => 5.0,
-                    'currency' => 'PLN',
-                ]
-            ]
-        ],
-        [
-            'order_line_items' => [
-                [
-                    'order_id' => 2,
-                    'sku' => 'SKU-01',
-                    'quantity' => 1,
-                    'price' => 10.0,
-                    'currency' => 'PLN'
-                ]
-            ]
-        ]
-    ],
-    $transformer->transform($rows)->toArray()
-);
-```
-
-## Transformer - StringFormat
-
-```php 
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\StringFormatTransformer;
-
-$transformer = new StringFormatTransformer('id', 'https://examlpe.com/resource/%d');
-
-$rows = $transformer->transform(new Rows(
-    new Row(new Row\Entries(new Row\Entry\IntegerEntry('id', 1))),
-    new Row(new Row\Entries(new Row\Entry\IntegerEntry('id', 2))),
-    new Row(new Row\Entries(new Row\Entry\IntegerEntry('id', 3))),
-));
-
-$this->assertSame(
-    [
-        ['id' => 'https://examlpe.com/resource/1'],
-        ['id' => 'https://examlpe.com/resource/2'],
-        ['id' => 'https://examlpe.com/resource/3'],
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - NullStringIntoNullEntry
-
-```php 
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\NullStringIntoNullEntryTransformer;
-
-$transformer = new NullStringIntoNullEntryTransformer('description', 'recommendation');
-
-$rows = $transformer->transform(new Rows(
-    Row::create(
-        new Row\Entry\IntegerEntry('id', 1),
-        new Row\Entry\BooleanEntry('active', false),
-        new Row\Entry\StringEntry('name', 'NULL'),
-        new Row\Entry\StringEntry('description', 'NULL'),
-        new Row\Entry\StringEntry('recommendation', 'null')
-    )
-));
-
-$this->assertSame(
-    [[
-        'id' => 1,
-        'active' => false,
-        'name' => 'NULL',
-        'description' => null,
-        'recommendation' => null,
-    ]],
-    $rows->toArray()
-);
-```
-
-## Transformer - Clone 
-
-```php 
-
-use Flow\ETL\Row;
-use Flow\ETL\Row\Entry;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\CloneEntryTransformer;
-
-$rows = (new CloneEntryTransformer('id', 'id-copy'))
-    ->transform(
-        new Rows(
-            Row::create(new Entry\IntegerEntry('id', 1))
-        )
-    );
-
-$this->assertSame(
-    [
-        ['id' => 1, 'id-copy' => 1]
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - ObjectMethod
-
-Executes method at other ObjectEntry and create new entry from the result. 
-Origin ObjectEntry is not automatically removed from the Row.
-
-```php 
-
-use Flow\ETL\Exception\RuntimeException;
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ObjectMethodTransformer;
-
-$transformer = new ObjectMethodTransformer('object', 'toArray');
-
-$rows = $transformer->transform(new Rows(
-    Row::create(new Row\Entry\ObjectEntry('object', $object = new class {
-        public function toArray() : array
-        {
-            return [
-                'id' => 1,
-                'name' => 'object'
-            ];
-        }
-    }))
-));
-
-$this->assertSame(
-    [
-        [
-            'object' => $object,
-            'method_entry' => [
-                'id' => 1,
-                'name' => 'object'
-            ]
-        ]
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - ArrayDotGet
+### Transformer - ArrayDotRename
 
 Read more about dot notation in [flow-php/array-dot](https://github.com/flow-php/array-dot) doumentation.
 
-```php 
-
-use Flow\ETL\Exception\RuntimeException;
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ObjectMethodTransformer;
-
-$arrayDotGetTransformer = new ArrayDotGetTransformer('array_entry', 'array.foo');
-
-$rows = $arrayDotGetTransformer->transform(
-    new Rows(
-        Row::create(
-            new Row\Entry\ArrayEntry('array_entry', [
-                'id' => 1,
-                'status' => 'PENDING',
-                'enabled' => true,
-                'array' => ['foo' => 'bar'],
-            ]),
-        ),
-    )
-);
-
-$this->assertEquals(
-    new Row\Entry\StringEntry('array.foo', 'bar'),
-    $rows->first()->get('array.foo')
-);
-```
-
-## Transformer - ArrayDotRename
-
-Read more about dot notation in [flow-php/array-dot](https://github.com/flow-php/array-dot) doumentation.
-
-```php 
-
-use Flow\ETL\Exception\RuntimeException;
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\ArrayDotRenameTransformer;
-
-$transformer = new ArrayDotRenameTransformer(
-    new ArrayKeyRename('array_entry', 'array.foo', 'new_name')
-);
-
-$rows = $transformer->transform(
-    new Rows(
-        Row::create(
-            new Row\Entry\ArrayEntry('array_entry', [
-                'id' => 1,
-                'status' => 'PENDING',
-                'enabled' => true,
-                'array' => ['foo' => 'bar'],
-            ]),
-        ),
-    ),
-);
-
-$this->assertEquals(
-    [
-        [
-            'array_entry' => [
-                'id' => 1,
-                'status' => 'PENDING',
-                'enabled' => true,
-                'array' => ['new_name' => 'bar'],
-            ],
-        ],
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - StringConcat
-
-Entries that are not StringEntry type will be skipped even if entry exists
-
-```php 
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\StringConcatTransformer;
-
-$transformer = new StringConcatTransformer([
-    'id', 'first_name', 'last_name'
-]);
-
-$rows = $transformer->transform(new Rows(
-    Row::create(
-        new Row\Entry\StringEntry('id', '1'),
-        new Row\Entry\StringEntry('first_name', 'Norbert'),
-        new Row\Entry\StringEntry('last_name', 'Orzechowicz'),
-    )
-));
-
-$this->assertSame(
-    [
-        [
-            'id' => '1',
-            'first_name' => 'Norbert',
-            'last_name' => 'Orzechowicz',
-            'element' => '1 Norbert Orzechowicz'
-        ]
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - DynamicEntry 
-
-Used to add dynamic entries to each row
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\DynamicEntryTransformer;
-
-$transformer = new DynamicEntryTransformer(
-    fn (Row $row) : Row\Entries => new Row\Entries(new Row\Entry\DateTimeEntry('updated_at', new \DateTimeImmutable('2020-01-01 00:00:00 UTC')))
-);
-
-$rows = $transformer->transform(new Rows(
-    Row::create(new Row\Entry\IntegerEntry('id', 1)),
-    Row::create(new Row\Entry\IntegerEntry('id', 2)),
-));
-
-$this->assertSame(
-    [
-        ['id' => 1, 'updated_at' => '2020-01-01T00:00:00+00:00'],
-        ['id' => 2, 'updated_at' => '2020-01-01T00:00:00+00:00'],
-    ],
-    $rows->toArray()
-);
-```
-
-
-## Transformer - StaticEntry
-
-Used to add static entry to each row
-
-```php
-
-use Flow\ETL\Row;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\StaticEntryTransformer;
-
-$transformer = new StaticEntryTransformer(
-    new StaticEntryTransformer(new Row\Entry\StringEntry('status', 'active'))
-);
-
-$rows = $transformer->transform(new Rows(
-    Row::create(new Row\Entry\IntegerEntry('id', 1)),
-    Row::create(new Row\Entry\IntegerEntry('id', 2)),
-));
-
-$this->assertSame(
-    [
-        ['id' => 1, 'status' => 'active'],
-        ['id' => 2, 'status' => 'active'],
-    ],
-    $rows->toArray()
-);
-```
-
-## Transformer - Chain
-
-Chains many transformers into one
-
-```php
-
-use Flow\ETL\Transformer\ChainTransformer;
-use Flow\ETL\Transformer\Condition\All;
-use Flow\ETL\Transformer\Condition\EntryValueEqualsTo;
-use Flow\ETL\Transformer\NewStaticEntryTransformer;
-
-$transformer = new ChainTransformer(
-    new ConditionalTransformer(
-        new All(
-            new EntryValueEqualsTo('first_name', 'Michael'),
-            new EntryValueEqualsTo('last_name', 'Jackson'),
-        ),
-        new NewStaticEntryTransformer(new Row\Entry\StringEntry('profession', 'singer'))
-    ),
-    new ConditionalTransformer(
-        new All(
-            new EntryValueEqualsTo('first_name', 'Rocky'),
-            new EntryValueEqualsTo('last_name', 'Balboa'),
-        ),
-        new NewStaticEntryTransformer(new Row\Entry\StringEntry('profession', 'boxer'))
-    )
-);
-```
-
-## Transformer - Clone 
-
-Clone entries 
-
-```php 
-
-use Flow\ETL\Row;
-use Flow\ETL\Row\Entry;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\CloneEntryTransformer;
-
-$rows = (new CloneEntryTransformer('id', 'id-copy'))
-    ->transform(
-        new Rows(
-            Row::create(new Entry\IntegerEntry('id', 1))
-        )
-    );
-
-$this->assertSame(
-    [
-        ['id' => 1, 'id-copy' => 1],
-    ],
-    $rows->toArray()
-);
-```
-
-
-## Transformer - MathOperation
+### Transformer - MathOperation
 
 **Warning, do not use for operations that require high precision since it's using native php arithmetic operations.**
-
-```php 
-
-use Flow\ETL\Row;
-use Flow\ETL\Row\Entry;
-use Flow\ETL\Rows;
-use Flow\ETL\Transformer\CloneEntryTransformer;
-
-$leftEntry = new Entry\IntegerEntry('left', 5);
-$rightEntry = new Entry\IntegerEntry('right', 2);
-
-$this->assertSame(
-    [
-        [
-            'left' => $leftEntry->value(),
-            'right' => $rightEntry->value(),
-            'sub' => 2.5,
-        ],
-    ],
-    MathOperationTransformer::sub($leftEntry->name(), $rightEntry->name())
-        ->transform(new Rows(Row::create($leftEntry, $rightEntry)))->toArray()
-);
-```
 
 ## Development
 
