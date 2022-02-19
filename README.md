@@ -22,6 +22,7 @@ Set of ETL generic Transformers, for the detailed usage instruction please look 
     * [static entry](src/Flow/ETL/Transformer/StaticEntryTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/StaticEntryTransformerTest.php) 
 * **Array**
     * [array collection get](src/Flow/ETL/Transformer/ArrayCollectionGetTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayCollectionGetTransformerTest.php)
+    * [array collection merge](src/Flow/ETL/Transformer/ArrayCollectionMergeTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayCollectionMergeTransformerTest.php)
     * [array dot get](src/Flow/ETL/Transformer/ArrayDotGetTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayDotGetTransformerTest.php)
     * [array rename](src/Flow/ETL/Transformer/ArrayDotRenameTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayDotRenameTransformerTest.php)
     * [array expand](src/Flow/ETL/Transformer/ArrayExpandTransformer.php) - [tests](tests/Flow/ETL/Transformer/Tests/Unit/ArrayExpandTransformerTest.php)
